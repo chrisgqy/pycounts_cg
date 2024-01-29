@@ -17,7 +17,7 @@ jobs:
       - name: Install package
         run: poetry install
       - name: Test with pytest
-        run: poetry run pytest tests/ --cov=pycounts_tt_2024 --cov-report=xml
+        run: poetry run pytest tests/ --cov=pycounts_cg --cov-report=xml
       - name: Use Codecov to track coverage
         uses: codecov/codecov-action@v3
         with:
@@ -61,7 +61,7 @@ jobs:
             pip install \
             --index-url https://test.pypi.org/simple/ \
             --extra-index-url https://pypi.org/simple \
-            pycounts_tt_2024
+            pycounts_cg
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         if: steps.release.outputs.released == 'true'
